@@ -24,41 +24,46 @@
 				</div>
 				<?php endif; ?>
 
+				<!-- Card  -->
 				<div class="card mb-3">
 					<div class="card-header">
-						<a href="<?php echo site_url('admin/customer/') ?>"><i class="fas fa-arrow-left"></i> Back</a>
+
+						<a href="<?php echo site_url('admin/supplier/') ?>"><i class="fas fa-arrow-left"></i>
+							Back</a>
 					</div>
 					<div class="card-body">
 
-						<form action="<?php base_url('admin/customer/add') ?>" method="post" enctype="multipart/form-data" >
+						<form action="<?php base_url(" admin/supplier/edit") ?>" method="post"
+							enctype="multipart/form-data" >
+
+							<input type="hidden" name="id" value="<?php echo $supplier->supplier_id?>" />
 
 							<div class="form-group">
-								<label for="customer_id">Id</label>
-								<input class="form-control <?php echo form_error('customer_id') ? 'is-invalid':'' ?>"
-								 type="text" name="id" placeholder="Customer id" />
+								<label for="supplier_id">Id</label>
+								<input class="form-control <?php echo form_error('supplier_id') ? 'is-invalid':'' ?>"
+								 type="text" name="supplier_id" placeholder="supplier id" value="<?php echo $supplier->supplier_id ?>" />
 								<div class="invalid-feedback">
-									<?php echo form_error('customer_id') ?>
+									<?php echo form_error('supplier_id') ?>
 								</div>
 							</div>
 
 							<div class="form-group">
 								<label for="name">Name</label>
-								<input class="form-control <?php echo form_error('name') ? 'is-invalid':'' ?>"
-								 type="text" name="name" placeholder="Customer name" />
+								<input class="form-control <?php echo form_error('supplier_name') ? 'is-invalid':'' ?>"
+								 type="text" name="name" placeholder="supplier name" value="<?php echo $supplier->supplier_name ?>" />
 								<div class="invalid-feedback">
-									<?php echo form_error('name') ?>
+									<?php echo form_error('supplier_name') ?>
 								</div>
 							</div>
 
 							<div class="form-group">
 								<label for="address">Address</label>
-								<input class="form-control <?php echo form_error('address') ? 'is-invalid':'' ?>"
-								 type="text" name="address" placeholder="Address name" />
+								<input class="form-control <?php echo form_error('supplier_address') ? 'is-invalid':'' ?>"
+								 type="text" name="address" placeholder="address id" value="<?php echo $supplier->supplier_address ?>" />
 								<div class="invalid-feedback">
-									<?php echo form_error('address') ?>
+									<?php echo form_error('supplier_address') ?>
 								</div>
 							</div>
-
 
 							<input class="btn btn-success" type="submit" name="btn" value="Save" />
 						</form>
@@ -81,7 +86,6 @@
 
 		</div>
 		<!-- /#wrapper -->
-
 
 		<?php $this->load->view("admin/_partials/scrolltop.php") ?>
 
